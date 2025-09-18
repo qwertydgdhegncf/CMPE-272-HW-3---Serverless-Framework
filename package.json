@@ -1,0 +1,17 @@
+{
+  "name": "lambda-workshop",
+  "version": "1.0.0",
+  "description": "Preparation:",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.1692.0",
+    "gm": "^1.23.0",
+    "jimp": "^0.16.1"
+  }
+}

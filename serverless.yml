@@ -1,0 +1,32 @@
+service: doge-meme-sid-7394
+
+provider:
+  name: aws
+  region: us-east-1
+  runtime: nodejs20.x
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - s3:ListBucket
+          Resource:
+            - arn:aws:s3:::doge-meme-sid-7394
+        - Effect: Allow
+          Action:
+            - s3:PutObject
+          Resource:
+            - arn:aws:s3:::doge-meme-sid-7394/*
+
+functions:
+  create:
+    handler: doge.create
+    memorySize: 128
+    timeout: 29
+    environment:
+      BUCKET: doge-meme-sid-7394
+    events:
+      - http:
+          path: doge/create
+          method: get
+          cors: true
